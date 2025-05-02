@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9288770962100185"
+    crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Online Unit Converter - Length, Weight, Temperature, Time, Speed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="b366dbb6459aafa1c91f8f26b783724b86199d71" />
+  <meta name="description" content="Convert units instantly with this free online unit converter. Supports metric and imperial conversions for length, weight, temperature, time, and speed. Optimized for mobile users in English-speaking countries.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    section {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+    input, select, button {
+      margin: 8px 4px;
+      padding: 10px;
+      font-size: 1em;
+    }
+    p {
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      input, select, button {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Free Online Unit Converter for Length, Weight, Temperature, Time & Speed</h1>
+
+  <!-- Length -->
+  <section>
+    <h2>Length Converter</h2>
+    <input type="number" id="lengthValue">
+    <select id="lengthFrom">
+      <option value="m">Meters</option>
+      <option value="cm">Centimeters</option>
+      <option value="inch">Inches</option>
+      <option value="ft">Feet</option>
+    </select>
+    <select id="lengthTo">
+      <option value="m">Meters</option>
+      <option value="cm">Centimeters</option>
+      <option value="inch">Inches</option>
+      <option value="ft">Feet</option>
+    </select>
+    <button onclick="convertLength()">Convert</button>
+    <p id="lengthResult"></p>
+  </section>
+
+  <!-- Weight -->
+  <section>
+    <h2>Weight Converter</h2>
+    <input type="number" id="weightValue">
+    <select id="weightFrom">
+      <option value="kg">Kilograms</option>
+      <option value="g">Grams</option>
+      <option value="lb">Pounds</option>
+    </select>
+    <select id="weightTo">
+      <option value="kg">Kilograms</option>
+      <option value="g">Grams</option>
+      <option value="lb">Pounds</option>
+    </select>
+    <button onclick="convertWeight()">Convert</button>
+    <p id="weightResult"></p>
+  </section>
+
+  <!-- Temperature -->
+  <section>
+    <h2>Temperature Converter</h2>
+    <input type="number" id="tempValue">
+    <select id="tempFrom">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+    <select id="tempTo">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+    <button onclick="convertTemp()">Convert</button>
+    <p id="tempResult"></p>
+  </section>
+
+  <!-- Time -->
+  <section>
+    <h2>Time Converter</h2>
+    <input type="number" id="timeValue">
+    <select id="timeFrom">
+      <option value="s">Seconds</option>
+      <option value="min">Minutes</option>
+      <option value="h">Hours</option>
+      <option value="day">Days</option>
+    </select>
+    <select id="timeTo">
+      <option value="s">Seconds</option>
+      <option value="min">Minutes</option>
+      <option value="h">Hours</option>
+      <option value="day">Days</option>
+    </select>
+    <button onclick="convertTime()">Convert</button>
+    <p id="timeResult"></p>
+  </section>
+
+  <!-- Speed -->
+  <section>
+    <h2>Speed Converter</h2>
+    <input type="number" id="speedValue">
+    <select id="speedFrom">
+      <option value="mps">m/s</option>
+      <option value="kph">km/h</option>
+      <option value="mph">mph</option>
+    </select>
+    <select id="speedTo">
+      <option value="mps">m/s</option>
+      <option value="kph">km/h</option>
+      <option value="mph">mph</option>
+    </select>
+    <button onclick="convertSpeed()">Convert</button>
+    <p id="speedResult"></p>
+  </section>
+
+  <!-- Google AdSense (Footer Section) -->
+  <section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9288770962100185"
+            crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9288770962100185"
+        data-ad-slot="6399153707"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+
+  <script>
+    function convertLength() {
+      const val = parseFloat(document.getElementById("lengthValue").value);
+      const from = document.getElementById("lengthFrom").value;
+      const to = document.getElementById("lengthTo").value;
+      const units = { m: 1, cm: 0.01, inch: 0.0254, ft: 0.3048 };
+      if (!isNaN(val)) {
+        const result = (val * units[from]) / units[to];
+        document.getElementById("lengthResult").innerText = `Result: ${result.toFixed(4)} ${to}`;
+      }
+    }
+
+    function convertWeight() {
+      const val = parseFloat(document.getElementById("weightValue").value);
+      const from = document.getElementById("weightFrom").value;
+      const to = document.getElementById("weightTo").value;
+      const units = { kg: 1, g: 0.001, lb: 0.453592 };
+      if (!isNaN(val)) {
+        const result = (val * units[from]) / units[to];
+        document.getElementById("weightResult").innerText = `Result: ${result.toFixed(4)} ${to}`;
+      }
+    }
+
+    function convertTemp() {
+      const val = parseFloat(document.getElementById("tempValue").value);
+      const from = document.getElementById("tempFrom").value;
+      const to = document.getElementById("tempTo").value;
+      if (!isNaN(val)) {
+        let celsius;
+        if (from === "C") celsius = val;
+        else if (from === "F") celsius = (val - 32) * 5 / 9;
+        else if (from === "K") celsius = val - 273.15;
+
+        let result;
+        if (to === "C") result = celsius;
+        else if (to === "F") result = celsius * 9 / 5 + 32;
+        else if (to === "K") result = celsius + 273.15;
+
+        document.getElementById("tempResult").innerText = `Result: ${result.toFixed(2)} ${to}`;
+      }
+    }
+
+    function convertTime() {
+      const val = parseFloat(document.getElementById("timeValue").value);
+      const from = document.getElementById("timeFrom").value;
+      const to = document.getElementById("timeTo").value;
+      const units = { s: 1, min: 60, h: 3600, day: 86400 };
+      if (!isNaN(val)) {
+        const result = (val * units[from]) / units[to];
+        document.getElementById("timeResult").innerText = `Result: ${result.toFixed(4)} ${to}`;
+      }
+    }
+
+    function convertSpeed() {
+      const val = parseFloat(document.getElementById("speedValue").value);
+      const from = document.getElementById("speedFrom").value;
+      const to = document.getElementById("speedTo").value;
+      const units = { mps: 1, kph: 1000 / 3600, mph: 1609.34 / 3600 };
+      if (!isNaN(val)) {
+        const result = (val * units[from]) / units[to];
+        document.getElementById("speedResult").innerText = `Result: ${result.toFixed(4)} ${to}`;
+      }
+    }
+  </script>
+
+</body>
+</html>
